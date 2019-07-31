@@ -1,7 +1,7 @@
 ##COMMUNITY BY MENGLIJINGHUA
 
 
-##programming
+##The project is programming
 
 
 ##Happy Summer Holiday
