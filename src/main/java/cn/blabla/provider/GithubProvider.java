@@ -17,11 +17,12 @@ public class GithubProvider {
         OkHttpClient client = new OkHttpClient();
         RequestBody body = RequestBody.create(mediaType, JSON.toJSONString(accessTokenDto));
         Request request = new Request.Builder()
-                .url("https://github.com/login/oauth/authorize")
+                .url("https://github.com/login/oauth/access_token")
                 .post(body)
                 .build();
         try (Response response = client.newCall(request).execute()) {
             String string = response.body().string();
+            System.out.println(string);
             String token = string.split("&")[0].split("=")[1];
             return token;
         } catch (Exception e) {
