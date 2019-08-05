@@ -22,11 +22,23 @@ public class QuestionService {
     UserMapper userMapper;
 
     public PaginationDto list(Integer page, Integer size) {
+        PaginationDto paginationDto = new PaginationDto();
+        Integer totalCount = questionMapper.count();
+        Integer totalPage;
+        totalPage = totalCount % size == 0 ? (totalCount / size) : (totalCount / size + 1);
+        paginationDto.setPagination(totalPage,page);
+        if(page<1){
+            page=1;
+        }
+        if(page>paginationDto.getTotalPage()){
+            page=paginationDto.getTotalPage();
+        }
+
+        System.out.println(paginationDto.getTotalPage());
         Integer offset = size*(page-1);
         List<Question> questions = questionMapper.list(offset,size);
         List<QuestionDto> questionDtoList = new ArrayList();
 
-        PaginationDto paginationDto = new PaginationDto();
         for(Question question:questions){
            User user = userMapper.findById(question.getCreator());
            QuestionDto questionDto = new QuestionDto();
@@ -35,9 +47,6 @@ public class QuestionService {
             questionDtoList.add(questionDto);
         }
         paginationDto.setQuestions(questionDtoList);
-
-        Integer totalCount = questionMapper.count();
-        paginationDto.setPagination(totalCount,page,size);
         return paginationDto;
     }
 }
