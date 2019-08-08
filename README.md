@@ -3,32 +3,11 @@
 
 ## The project is programming! Happy Summer Holiday
 
-## 快速运行
-1. 安装必备工具  
-JDK，Maven
-2. 克隆代码到本地  
-3. 运行命令创建数据库脚本
-```sh
-mvn flyway:migrate
-```
-4. 运行打包命令
-```sh
-mvn package
-```
-5. 运行项目  
-```sh
-java -jar target/community-0.0.1-SNAPSHOT.jar
-```
-6. 访问项目
-```
-http://localhost:8887
-```
-
-
-### 资料
+### 参考资料
 [Spring 文档](https://spring.io/guides)    
 [Spring Web](https://spring.io/guides/gs/serving-web-content/)   
 [es](https://elasticsearch.cn/explore)    
+[mybatis generator](http://www.mybatis.org/generator/)
 [Github deploy key](https://developer.github.com/v3/guides/managing-deploy-keys/#deploy-keys)    
 [Bootstrap](https://v3.bootcss.com/getting-started/)    
 [Github OAuth](https://developer.github.com/apps/building-oauth-apps/creating-an-oauth-app/)    
@@ -52,3 +31,23 @@ http://localhost:8887
 [Live Reload](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei/related)  
 [Postman](https://chrome.google.com/webstore/detail/coohjcphdfgbiolnekdpbcijmhambjff)
 
+## 快速运行
+1. 安装必备工具  
+JDK，Maven
+2. 克隆代码到本地  
+3. 运行命令创建数据库脚本
+```sh
+mvn flyway:migrate
+```
+4. 运行打包命令
+```sh
+mvn package
+```
+5. 运行项目  
+```sh
+java -jar target/community-0.0.1-SNAPSHOT.jar
+```
+6. 访问项目
+```
+http://localhost:8080
+```
