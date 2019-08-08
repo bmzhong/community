@@ -3,7 +3,7 @@
 
 ## The project is programming! Happy Summer Holiday
 
-### 快速运行
+## 快速运行
 1. 安装必备工具  
 JDK，Maven
 2. 克隆代码到本地  
