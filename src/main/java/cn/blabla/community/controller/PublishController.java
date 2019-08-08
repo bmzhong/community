@@ -19,10 +19,21 @@ public class PublishController {
     @Autowired
     UserMapper userMapper;
 
+    @GetMapping("/publish/{id}")
+    public String edit(@PathVariable(name = "id") Integer id,
+                       Model model){
+        Question question = questionMapper.getById(id);
+        model.addAttribute("title",question.getTitle());
+        model.addAttribute("description",question.getDescription());
+        model.addAttribute("tag",question.getTag());
+        return "publish";
+    }
+
     @GetMapping("/publish")
     public String publish() {
         return "publish";
     }
+
     @RequestMapping(value = "/abc",method = RequestMethod.GET)
     public String doPublish(@RequestParam(name = "title") String title,
                             @RequestParam(name = "description") String description,
