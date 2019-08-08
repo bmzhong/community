@@ -1,11 +1,10 @@
-package cn.blabla.controller;
+package cn.blabla.community.controller;
 
-import cn.blabla.dto.AccessTokenDto;
-import cn.blabla.dto.GithubUser;
-import cn.blabla.mapper.UserMapper;
-import cn.blabla.model.User;
-import cn.blabla.provider.GithubProvider;
-import cn.blabla.service.UserService;
+import cn.blabla.community.dto.AccessTokenDto;
+import cn.blabla.community.dto.GithubUser;
+import cn.blabla.community.model.User;
+import cn.blabla.community.provider.GithubProvider;
+import cn.blabla.community.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;

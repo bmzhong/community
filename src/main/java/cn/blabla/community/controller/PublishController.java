@@ -1,9 +1,9 @@
-package cn.blabla.controller;
+package cn.blabla.community.controller;
 
-import cn.blabla.mapper.QuestionMapper;
-import cn.blabla.mapper.UserMapper;
-import cn.blabla.model.Question;
-import cn.blabla.model.User;
+import cn.blabla.community.mapper.QuestionMapper;
+import cn.blabla.community.mapper.UserMapper;
+import cn.blabla.community.model.Question;
+import cn.blabla.community.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

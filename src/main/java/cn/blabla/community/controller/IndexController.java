@@ -1,7 +1,7 @@
-package cn.blabla.controller;
+package cn.blabla.community.controller;
 
-import cn.blabla.dto.PaginationDto;
-import cn.blabla.service.QuestionService;
+import cn.blabla.community.dto.PaginationDto;
+import cn.blabla.community.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

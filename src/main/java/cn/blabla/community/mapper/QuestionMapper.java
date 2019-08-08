@@ -1,6 +1,6 @@
-package cn.blabla.mapper;
+package cn.blabla.community.mapper;
 
-import cn.blabla.model.Question;
+import cn.blabla.community.model.Question;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;

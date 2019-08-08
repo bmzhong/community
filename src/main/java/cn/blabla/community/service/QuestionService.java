@@ -1,11 +1,11 @@
-package cn.blabla.service;
+package cn.blabla.community.service;
 
-import cn.blabla.dto.PaginationDto;
-import cn.blabla.dto.QuestionDto;
-import cn.blabla.mapper.QuestionMapper;
-import cn.blabla.mapper.UserMapper;
-import cn.blabla.model.Question;
-import cn.blabla.model.User;
+import cn.blabla.community.dto.PaginationDto;
+import cn.blabla.community.dto.QuestionDto;
+import cn.blabla.community.mapper.QuestionMapper;
+import cn.blabla.community.mapper.UserMapper;
+import cn.blabla.community.model.Question;
+import cn.blabla.community.model.User;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,4 +1,4 @@
-package cn.blabla.dto;
+package cn.blabla.community.dto;
 
 import lombok.Data;
 

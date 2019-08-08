@@ -1,4 +1,4 @@
-package cn.blabla.model;
+package cn.blabla.community.model;
 
 import lombok.Data;
 

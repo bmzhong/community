@@ -1,6 +1,6 @@
-package cn.blabla.mapper;
+package cn.blabla.community.mapper;
 
-import cn.blabla.model.User;
+import cn.blabla.community.model.User;
 import org.apache.ibatis.annotations.*;
 
 @Mapper

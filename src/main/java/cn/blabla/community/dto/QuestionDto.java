@@ -1,9 +1,10 @@
-package cn.blabla.model;
+package cn.blabla.community.dto;
 
+import cn.blabla.community.model.User;
 import lombok.Data;
 
 @Data
-public class Question {
+public class QuestionDto {
 
     private Integer id;
     private String title;
@@ -15,5 +16,5 @@ public class Question {
     private Integer viewCount;
     private Integer commentCount;
     private Integer likeCount;
-
+    private User user;
 }
