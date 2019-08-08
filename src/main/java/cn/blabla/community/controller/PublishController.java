@@ -1,9 +1,10 @@
 package cn.blabla.community.controller;
 
+import cn.blabla.community.dto.QuestionDto;
 import cn.blabla.community.mapper.QuestionMapper;
-import cn.blabla.community.mapper.UserMapper;
 import cn.blabla.community.model.Question;
 import cn.blabla.community.model.User;
+import cn.blabla.community.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,15 +18,16 @@ public class PublishController {
     QuestionMapper questionMapper;
 
     @Autowired
-    UserMapper userMapper;
+    QuestionService questionService;
 
     @GetMapping("/publish/{id}")
     public String edit(@PathVariable(name = "id") Integer id,
                        Model model){
-        Question question = questionMapper.getById(id);
+        QuestionDto question = questionService.getById(id);
         model.addAttribute("title",question.getTitle());
         model.addAttribute("description",question.getDescription());
         model.addAttribute("tag",question.getTag());
+        model.addAttribute("id",question.getId());
         return "publish";
     }
 
@@ -38,6 +40,7 @@ public class PublishController {
     public String doPublish(@RequestParam(name = "title") String title,
                             @RequestParam(name = "description") String description,
                             @RequestParam(name = "tag") String tag,
+                            @RequestParam(name = "id",required = false) Integer id,
                             HttpServletRequest httpServletRequest,
                             Model model
                             ){
@@ -67,9 +70,9 @@ public class PublishController {
             question.setDescription(description);
             question.setTag(tag);
             question.setCreator(user.getId());
-            question.setGmtCreate(System.currentTimeMillis());
-            question.setGmtModified(question.getGmtCreate());
-            questionMapper.create(question);
+
+            question.setId(id);
+            questionService.createOrUpdate(question);
             model.addAttribute("success","添加成功");
             return "publish";
 
