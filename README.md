@@ -5,9 +5,9 @@
 
 ### 参考资料
 [Spring 文档](https://spring.io/guides)    
-[Spring WVC](https://spring.io/guides/gs/serving-web-content)      
-[mybatis generator](http://www.mybatis.org/generator)
-[elasticsearch](https://elasticsearch.cn/explore) 
+[Spring WVC](https://spring.io/guides/gs/serving-web-content/)   
+[elasticsearch](https://elasticsearch.cn/explore)    
+[mybatis generator](http://www.mybatis.org/generator/)
 [Github deploy key](https://developer.github.com/v3/guides/managing-deploy-keys/#deploy-keys)    
 [Bootstrap](https://v3.bootcss.com/getting-started/)    
 [Github OAuth](https://developer.github.com/apps/building-oauth-apps/creating-an-oauth-app/)    
