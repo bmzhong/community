@@ -18,7 +18,6 @@ public class QuestionController {
     public String question(@PathVariable(name = "id") Integer id,
                            Model model){
         QuestionDto questionDto = questionService.getById(id);
-        System.out.println("hello");
         model.addAttribute("question",questionDto);
         return "question";
     }
