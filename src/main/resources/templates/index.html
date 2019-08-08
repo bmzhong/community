@@ -3,11 +3,11 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>COMMUNITY</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="css/bootstrap-theme.min.css"/>
-    <link rel="stylesheet" href="css/community.css"/>
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/bootstrap.min.js" type="application/javascript"></script>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/static/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="/static/css/community.css"/>
+    <script src="/static/js/jquery-3.4.1.min.js"></script>
+    <script src="/static/js/bootstrap.min.js" type="application/javascript"></script>
 </head>
 <body>
 <div th:insert="~{navigation::nav}"></div>
@@ -24,7 +24,9 @@
                     </a>
                 </div>
                 <div class="media-body">
-                    <h4 class="media-heading" th:text="${question.title}">Spring boot开发</h4>
+                    <h4 class="media-heading" >
+                        <a th:href="@{'question/'+${question.id}}" th:text="${question.title}"></a>
+                    </h4>
                     <span th:text="${question.description}"></span>
                     <span class="desc"> <span th:text="${question.commentCount}"></span>个回复
                                         <span th:text="${question.viewCount}"></span>次浏览
@@ -50,7 +52,7 @@
                             th:href="@{/(page=${page})}" th:text="${page}"
                     ></a>
                     </li>
-
+l
                     <li th:if="${pagination.showNext}">
                         <a th:href="@{/(page=${pagination.page + 1})}" aria-label="Previous">
                             <span aria-hidden="true">&gt;</span>
