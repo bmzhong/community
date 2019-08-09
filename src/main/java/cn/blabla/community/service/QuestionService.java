@@ -40,7 +40,7 @@ public class QuestionService {
         List<QuestionDto> questionDtoList = new ArrayList<>();
 
         for(Question question:questions){
-           User user = userMapper.findById(question.getCreator());
+           User user = userMapper.selectByPrimaryKey(question.getCreator());
            QuestionDto questionDto = new QuestionDto();
             BeanUtils.copyProperties(question,questionDto);
             questionDto.setUser(user);
@@ -70,7 +70,7 @@ public class QuestionService {
         List<QuestionDto> questionDtoList = new ArrayList<>();
 
         for(Question question:questions){
-            User user = userMapper.findById(question.getCreator());
+            User user = userMapper.selectByPrimaryKey(question.getCreator());
             QuestionDto questionDto = new QuestionDto();
             BeanUtils.copyProperties(question,questionDto);
             questionDto.setUser(user);
@@ -86,7 +86,7 @@ public class QuestionService {
         Question question = questionMapper.getById(id);
         QuestionDto questionDto = new QuestionDto();
         BeanUtils.copyProperties(question,questionDto);
-        User user = userMapper.findById(question.getCreator());
+        User user = userMapper.selectByPrimaryKey(question.getCreator());
         questionDto.setUser(user);
         return questionDto;
     }
