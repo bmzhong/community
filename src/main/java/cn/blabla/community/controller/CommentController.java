@@ -22,9 +22,6 @@ public class CommentController {
     @Autowired
     private CommentMapper commentMapper;
 
-    @Autowired
-    private CommentService commentService;
-
     @RequestMapping(value = "/comment", method = RequestMethod.POST)
     public Object comment(@RequestBody CommentDto commentDto,
                           HttpServletRequest request) {

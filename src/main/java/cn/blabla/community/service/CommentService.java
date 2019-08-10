@@ -4,6 +4,7 @@ import cn.blabla.community.enums.CommentTypeEnum;
 import cn.blabla.community.exception.CustomizeErrorCode;
 import cn.blabla.community.exception.CustomizeException;
 import cn.blabla.community.mapper.CommentMapper;
+import cn.blabla.community.mapper.QuestionExtMapper;
 import cn.blabla.community.mapper.QuestionMapper;
 import cn.blabla.community.model.Comment;
 import cn.blabla.community.model.Question;
@@ -17,6 +18,9 @@ public class CommentService {
 
     @Autowired
     QuestionMapper questionMapper;
+
+    @Autowired
+    QuestionExtMapper questionExtMapper;
 
     public void insert(Comment comment) {
         if (comment.getParentId() == null || comment.getParentId() == 0) {
@@ -39,6 +43,8 @@ public class CommentService {
                 throw new CustomizeException(CustomizeErrorCode.QUESTION_NOT_FOUND);
             }
             commentMapper.insert(comment);
+            question.setCommentCount(1);
+            questionExtMapper.increaseCommentCount(question);
         }
     }
 }
