@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS `question`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `question` (
-  `id` bigint(100) NOT NULL,
+  `id` bigint(100) NOT NULL AUTO_INCREMENT,
   `title` varchar(58) DEFAULT NULL,
   `description` text,
   `gmt_create` bigint(20) DEFAULT NULL,

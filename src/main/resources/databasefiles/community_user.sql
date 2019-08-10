@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS `user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `user` (
-  `id` bigint(100) NOT NULL,
+  `id` bigint(100) NOT NULL AUTO_INCREMENT,
   `account_id` varchar(100) DEFAULT NULL,
   `name` varchar(50) DEFAULT NULL,
   `token` char(36) DEFAULT NULL,
@@ -32,7 +32,7 @@ CREATE TABLE `user` (
   `bio` varchar(256) DEFAULT NULL,
   `avatar_url` varchar(256) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -44,4 +44,4 @@ CREATE TABLE `user` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-08-10 20:11:34
+-- Dump completed on 2019-08-10 21:19:40
